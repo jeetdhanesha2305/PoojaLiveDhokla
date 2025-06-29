@@ -1,0 +1,35 @@
+
+bundle:
+  name: poojaLiveDhokla
+
+variables:
+  env: null
+  catalog: null
+
+include: ["./resources/job_flow.yml"]
+
+targets:
+  dev:
+    mode: development
+    workspace:
+      host: https://adb-3981488525472558.18.azuredatabricks.net
+    default: true
+    variables:
+      env: dev
+      catalog: dev_catalog
+
+  uat:
+    mode: development
+    workspace:
+      host: https://adb-3981488525472558.18.azuredatabricks.net
+    variables:
+      env: uat
+      catalog: uat_catalog
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-3981488525472558.18.azuredatabricks.net
+    variables:
+      env: prod
+      catalog: prod_catalog
