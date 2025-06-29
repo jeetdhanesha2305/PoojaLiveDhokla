@@ -1,11 +1,18 @@
 from common.config import Config
 from common.metadata import MetadataFactory 
 import argparse
+import sys
+import os
+
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--env", required=True)
 parser.add_argument("--catalog", required=True)
 args = parser.parse_args()
+
 
 env = args.env
 catalog = args.catalog
